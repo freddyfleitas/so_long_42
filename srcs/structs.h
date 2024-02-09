@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:55:14 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/29 18:35:07 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:22:22 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct graphics
 	void *p_img;
 	void *e_img;
 	void *c_img;
+	int img_w;
+	int img_h;
 
 }t_graphs;
 
