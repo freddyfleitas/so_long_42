@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:30:00 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/29 18:15:53 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:02:49 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,11 @@ void init_dfs(t_map *dfs, int height, int width);
 void dfs_matrix(t_map *dfs, int x, int y);
 
 //Graphs functions
-void init_mlx_data(t_graphs *data, t_map *mp);
-void init_graphs(t_graphs *draw);
-void place_mapobjs(t_graphs *draw, t_map *mp);
+void init_mlx_data(t_map *mp);
+void init_graphs(t_map *draw);
+void place_mapobjs(t_map *mp);
 void init_game(t_map *mp);
+int key_handler(int keycode, t_map *data);
+int close_windows(t_map *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/29 20:07:02 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:09:10 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void mapping(char *filename, t_map *mp)
 		handle_errors("The map must have 1 EXIT AND 1 PLAYER POSITION");
 	init_dfs(mp, mp->mapsize, mp->len);
 	dfs_matrix(mp, mp->playerpos_x, mp->playerpos_y);
-	printf("mapping end\n"); //TODO: erase line
 	if (mp->exit_dfs > 0 && mp->collectible == mp->collectible_dfs)
 		return ;
 	else

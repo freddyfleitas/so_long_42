@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:16:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/03 15:04:38 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:54:47 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,21 @@ int	handle_argument(char *argv)
 
 int main(int argc, char **argv)
 {
-	t_map *map;
-	map = malloc(sizeof(t_map));
-	if (!map)
-		return (0);
-	
+	t_map map;
+
     if (argc > 2)
 	{
-		free(map);
 		printf("Too many arguments!");
 		return (0);
 	}
 	if (argc < 2)
 	{
-		free(map);
 		printf("Too few arguments!");
 		return (0);
 	}
 	handle_argument(argv[1]);
-	mapping(argv[1], map);
-	init_game(map);
+	mapping(argv[1], &map);
+	init_game(&map);
 	// system("leaks -q so_long");
 	return (0);
 }

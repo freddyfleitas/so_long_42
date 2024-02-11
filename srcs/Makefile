@@ -6,13 +6,14 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/03 18:29:24 by ffleitas          #+#    #+#              #
-#    Updated: 2024/01/29 19:47:30 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/02/11 14:34:45 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 LIBFT = ../libft/libftprintf.a
-SRC = game_graphs.c main.c parsing_map_utils.c parsing_map.c map_path.c
+SRC = game_graphs.c main.c parsing_map_utils.c parsing_map.c map_path.c \
+		game_utils.c
 OBJS = $(SRC:.c=.o)
 CC = gcc -g3 -Wall -Wextra -Werror #-fsanitize=address
 INCLUDES = -lmlx -framework OpenGL -framework AppKit
