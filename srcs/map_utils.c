@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_map_utils.c                                :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:54:35 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/19 20:02:30 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:16:54 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 //Manejar errores para mostrar los fallos por pantalla
 void handle_errors(char *error)

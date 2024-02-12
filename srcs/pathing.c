@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_path.c                                         :+:      :+:    :+:   */
+/*   pathing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 20:27:59 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/19 19:49:22 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:39:57 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void free_dfs(int **dfs, int len)
 }
 
 //Iniciar la matriz para dfs
-void init_dfs(t_map *dfs, int height, int width)
+void init_dfs(t_game *dfs, int height, int width)
 {
 	int i;
 	int j;
@@ -47,7 +47,7 @@ void init_dfs(t_map *dfs, int height, int width)
 		i ++;
 	}
 }
-void dfs_matrix(t_map *dfs, int x, int y)
+void dfs_matrix(t_game *dfs, int x, int y)
 {
 	if (x < 0 || y < 0 || x > dfs->mapsize || y > dfs->len ||
 		dfs->visited[x][y] == 1 || dfs->map[x][y] == WALL)

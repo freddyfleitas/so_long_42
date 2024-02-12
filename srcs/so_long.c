@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:16:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/11 14:54:47 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:36:03 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	handle_argument(char *argv)
 		if(*argv == '.' && *(argv + 1) == 'b' && *(argv + 2) == 'e'
 			&& *(argv + 3) == 'r' && *(argv + 4) == '\0')
 		{
-			ft_printf("The map type is correct, CHECKING MAP!\n");
 			return (0);
 		}
 		argv ++;
@@ -31,16 +30,11 @@ int	handle_argument(char *argv)
 
 int main(int argc, char **argv)
 {
-	t_map map;
+	t_game map;
 
-    if (argc > 2)
+    if (argc != 2)
 	{
-		printf("Too many arguments!");
-		return (0);
-	}
-	if (argc < 2)
-	{
-		printf("Too few arguments!");
+		printf("EXAMPLE OF USE: ./so_long + map.ber\n");
 		return (0);
 	}
 	handle_argument(argv[1]);
