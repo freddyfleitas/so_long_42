@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:16:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/12 17:36:03 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:44:39 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	handle_argument(char *argv)
 {
-	while(*argv)
+	while (*argv)
 	{
-		if(*argv == '.' && *(argv + 1) == 'b' && *(argv + 2) == 'e'
+		if (*argv == '.' && *(argv + 1) == 'b' && *(argv + 2) == 'e'
 			&& *(argv + 3) == 'r' && *(argv + 4) == '\0')
 		{
 			return (0);
@@ -28,18 +28,18 @@ int	handle_argument(char *argv)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_game map;
+	t_game	map;
 
-    if (argc != 2)
+	if (argc != 2)
 	{
 		printf("EXAMPLE OF USE: ./so_long + map.ber\n");
 		return (0);
 	}
 	handle_argument(argv[1]);
 	mapping(argv[1], &map);
-	init_game(&map);
 	// system("leaks -q so_long");
+	initialize_game(&map);
 	return (0);
 }

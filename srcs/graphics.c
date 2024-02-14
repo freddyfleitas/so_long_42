@@ -6,13 +6,13 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:53:48 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/12 17:38:14 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:41:56 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init_graphs(t_game *game)
+void	load_images(t_game *game)
 {
 	int	i;
 	int	j;
@@ -48,7 +48,27 @@ void	place_background(t_game *game)
 	}
 }
 
-void	place_mapobjs(t_game *game)
+void	place_images_in_windows(t_game *game, int rows, int col)
+{
+	if (game->map[rows][col] == FLOOR)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->f_img, col * 40, rows * 40);
+	if (game->map[rows][col] == WALL)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->w_img, col * 40, rows * 40);
+	if (game->map[rows][col] == EXIT)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->e_img, col * 40, rows * 40);
+	if (game->map[rows][col] == COLLECTIBLE)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->c_img, col * 40, rows * 40);
+	if (game->map[rows][col] == PLAYER)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->p_img, col * 40, rows * 40);
+	return ;
+}
+
+void	place_images_at_position(t_game *game)
 {
 	int	rows;
 	int	col;
@@ -59,29 +79,15 @@ void	place_mapobjs(t_game *game)
 		col = 0;
 		while (game->map[rows][col])
 		{
-			if (game->map[rows][col] == FLOOR)
-				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-					game->f_img, col * 40, rows * 40);
-			if (game->map[rows][col] == WALL)
-				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-					game->w_img, col * 40, rows * 40);
-			if (game->map[rows][col] == COLLECTIBLE)
-				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-					game->c_img, col * 40, rows * 40);
-			if (game->map[rows][col] == EXIT)
-				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-					game->e_img, col * 40, rows * 40);
-			if (game->map[rows][col] == PLAYER)
-				mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-					game->p_img, col * 40, rows * 40);
+			place_images_in_windows(game, rows, col);
 			col ++;
 		}
 		rows ++;
 	}
 }
-
 // system("leaks -q so_long");
-void	init_game(t_game *game)
+
+void	initialize_game(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	if (game->mlx_ptr == NULL)
@@ -90,9 +96,16 @@ void	init_game(t_game *game)
 			(game->mapsize * 40), WIN_N);
 	if (game->win_ptr == NULL)
 		return ;
-	init_graphs(game);
+	game->f_img = NULL;
+	game->w_img = NULL;
+	game->p_img = NULL;
+	game->e_img = NULL;
+	game->c_img = NULL;
+	game->win_img = NULL;
+	game->counter = 0;
+	load_images(game);
 	place_background(game);
-	place_mapobjs(game);
+	place_images_at_position(game);
 	mlx_key_hook(game->win_ptr, key_handler, game);
 	mlx_hook(game->win_ptr, 17, 0L, close_game, game);
 	mlx_loop(game->mlx_ptr);
