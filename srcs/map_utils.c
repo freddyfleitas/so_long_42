@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:54:35 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/14 16:06:47 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:01:53 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,26 @@ void	init_map_struct(t_game *game)
 	game->collectible_dfs = 0;
 }
 
-
-int ft_strlen_sl(const char *s1)
+int	ft_strlen_sl(const char *s1)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i])
 	{
 		if (s1[i] == '\n')
-			break;
+			break ;
 		i ++;
 	}
 	return (i);
 }
+
 char	*ft_strdup_sl(const char *s1)
 {
 	char	*copy;
 	size_t	i;
 
 	i = 0;
-	system("leaks -q so_long");
 	copy = (char *)malloc(ft_strlen_sl(s1) + 1);
 	if (!copy)
 		return (NULL);

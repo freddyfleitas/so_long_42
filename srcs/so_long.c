@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:16:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/14 15:44:39 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:02:28 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	main(int argc, char **argv)
 	}
 	handle_argument(argv[1]);
 	mapping(argv[1], &map);
-	// system("leaks -q so_long");
 	initialize_game(&map);
 	return (0);
 }
+
+	// system("leaks -q so_long");

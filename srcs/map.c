@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/14 16:05:23 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:00:50 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,17 @@ void	map_creator(t_game *game)
 	if (fd < 0)
 		return ;
 	game -> mapsize = map_size(fd);
-	game -> map = (char **)malloc(game -> mapsize);
+	game -> map = (char **)malloc(sizeof(char *) * (game -> mapsize + 1));
 	if (!game -> map)
 		return ;
 	close(fd);
 	fd = open (game->filename, O_RDONLY);
-	temp = get_next_line(fd);
 	counter = 0;
-	while (counter != game->mapsize)
+	while (counter < game -> mapsize)
 	{
+		temp = get_next_line(fd);
 		game -> map[counter] = ft_strdup_sl(temp);
-		free(temp);
-		temp = get_next_line (fd);
+		free (temp);
 		counter ++;
 	}
 	game->map[counter] = NULL;
