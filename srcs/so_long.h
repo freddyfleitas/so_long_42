@@ -6,14 +6,12 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:30:00 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/14 15:43:44 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:14:00 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# define WIN_H 500
-# define WIN_W 700
 # define WIN_N "so_long"
 # define WALL '1'
 # define FLOOR '0'

@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:59:59 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/08 12:06:58 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:05:36 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putstr(char *str, int *count)
 		}
 	}
 	else
-	{		
+	{
 		while (str[i])
 		{
 			ft_putchar (str[i], count);

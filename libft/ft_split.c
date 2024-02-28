@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:15:00 by ffleitas          #+#    #+#             */
-/*   Updated: 2023/11/03 18:20:21 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:05:24 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ static void	ft_free(char **str, int size)
 	free (str);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -103,21 +102,4 @@ char	**ft_split(char const *s, char c)
 	}
 	result[wordcount] = NULL;
 	return (result);
-}
-int main() 
-{
-	const char *str = "Hola1mundo1como1estas1";
-	char **result = ft_split(str,'1');
-
-	if(result)
-	{
-		int i = 0;
-		while(result[i])
-		{
-			printf("%s\n",result[i]);
-			i ++;
-		}
-		ft_free(result,i);
-	}
-	return(0);
 }

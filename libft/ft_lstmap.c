@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:29:19 by ffleitas          #+#    #+#             */
-/*   Updated: 2023/10/19 17:52:05 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:06:12 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (first);
 }
-
-
-

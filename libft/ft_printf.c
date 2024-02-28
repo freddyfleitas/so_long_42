@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:59:53 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/01/08 12:06:32 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:06:01 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_printf(char const*format, ...)
 		else
 			ft_putchar (format[index], &count);
 		index ++;
-	}	
+	}
 	va_end (args);
 	return (count);
 }
