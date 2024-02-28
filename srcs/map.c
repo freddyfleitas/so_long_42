@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:16:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/21 18:00:50 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:27:14 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,6 @@ void	mapping(char *filename, t_game *game)
 	else
 	{
 		free_dfs(game->visited, game->mapsize);
-		handle_errors("Invalid Map!");
+		handle_errors("The exit or the collectibles are not accessible!");
 	}
 }
