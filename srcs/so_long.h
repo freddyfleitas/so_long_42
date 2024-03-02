@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:30:00 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/02/28 17:14:00 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:16:35 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 
-# include "../minilibx/mlx.h"
+# include "mlx.h"
 # include "../libft/libft.h"
 
 typedef struct goodgame
